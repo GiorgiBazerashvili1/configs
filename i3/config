@@ -19,8 +19,7 @@ font pango:monospace 15
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-
-bindsym $mod+Shift+m exec --no-startup-id bash ~/repair_marshall.sh
+bindsym $mod+Shift+m exec --no-startup-id bash ~/executables/major-connect.sh
 
 exec --no-startup-id dex --autostart --environment i3
 
@@ -37,7 +36,7 @@ assign [class="Spotify"] 3
 
 exec --no-startup-id i3-msg "workspace 1; exec kitty"
 exec --no-startup-id i3-msg "workspace 2; exec firefox"
-exec --no-startup-id spotify
+exec --no-startup-id flatpak run com.spotify.Client
 
 #O NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
