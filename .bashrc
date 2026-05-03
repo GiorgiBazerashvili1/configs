@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='eza --icons'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -101,6 +101,7 @@ alias c='clear'
 alias nv="nvim"
 alias configs="cd ~/.config"
 alias dotsave='git add . && git commit -m "updated" && git push'
+alias projects="cd ~/Desktop/projects"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
