@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -100,7 +100,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias c='clear'
 alias nv="nvim"
 alias configs="cd ~/.config"
-alias dotsave='git add . && git commit -m "updated" && git push'
+alias dotsave='cd ~/configs && git add . && git commit -m "updated" && git push'
 alias projects="cd ~/Desktop/projects"
 
 # Alias definitions.
