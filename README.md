@@ -17,7 +17,7 @@ Install these programs before using the configs:
 ### Ubuntu / Debian
 ```bash
 sudo apt update
-sudo apt install i3-wm picom kitty polybar flameshot neovim git curl build-essential nodejs npm
+sudo apt install feh i3-wm picom kitty polybar flameshot neovim git curl build-essential nodejs npm
 npm install -g tree-sitter-cli
 ```
 

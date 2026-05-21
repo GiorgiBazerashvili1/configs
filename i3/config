@@ -48,7 +48,7 @@ exec --no-startup-id flatpak run com.spotify.Client
 exec --no-startup-id nm-applet &
 
 exec --no-startup-id sh -c "sleep 1 && xrandr --output eDP-1 --mode 1920x1080"
-exec --no-startup-id sh -c "sleep 1 && exec feh --bg-scale ~/Downloads/wallpaper7.jpeg"
+exec --no-startup-id sh -c "sleep 1 && feh --bg-scale ~/Downloads/anime-girl.jpg"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -182,29 +182,27 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+mode "resize" {
+        # Standard jkl; bindings
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+        # Arrow keys (Fixed the "resizejshrink" typo here)
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # Exit bindings
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
+
+bindsym $mod+r mode "resize"
 
 # This rule handles the "hiding" and "centering" automatically
 for_window [instance="sp_term"] move scratchpad, floating enable, resize set 1000 600, move position center
