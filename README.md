@@ -1,6 +1,6 @@
 ## Dependencies
 
-Install these programs before using the configs:
+Install these programs before using the config files:
 
 - i3
 - picom
