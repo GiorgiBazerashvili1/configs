@@ -108,6 +108,10 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
+# Laptop screen brightness controls (Routed through local helper script)
+bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/i3/brightness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/brightness.sh down
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
