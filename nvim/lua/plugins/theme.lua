@@ -1,34 +1,35 @@
 return {
-  {
-    "projekt0n/github-nvim-theme",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.o.background = "dark"
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("tokyonight").setup({
+                style = "storm",    -- Choose "storm" for deep blue-dark, or "night" for pitch black
+                transparent = true, -- Essential for your Kitty terminal blur
+                terminal_colors = true,
+                styles = {
+                    sidebars = "transparent",
+                    floats = "transparent",
+                },
+                on_colors = function(colors)
+                    colors.comment = "#565f89" -- Crisp slate-blue for comments
+                end,
+            })
 
-      require("github-theme").setup({
-        options = {
-          transparent = false,
-        },
-      })
+            -- Activate the color scheme
+            vim.cmd("colorscheme tokyonight")
 
-      vim.cmd("colorscheme github_dark")
-
-      -- 🔥 NEAR-BLACK BACKGROUND (ultra close to black)
-      vim.cmd([[
-        highlight Normal guibg=#070707 guifg=#c9d1d9
-        highlight NormalNC guibg=#070707 guifg=#c9d1d9
-        highlight SignColumn guibg=#070707
-        highlight EndOfBuffer guibg=#070707
-      ]])
-
-      -- 🌲 NVIM-TREE MATCH
-      vim.cmd([[
-        highlight NvimTreeNormal guibg=#070707
-        highlight NvimTreeNormalNC guibg=#070707
-        highlight NvimTreeEndOfBuffer guibg=#070707
-        highlight NvimTreeWinSeparator guibg=#070707
-      ]])
-    end,
-  },
+            -- Force pure transparency so your blur bleeds through perfectly
+            vim.cmd([[
+                highlight Normal guibg=none ctermbg=none
+                highlight NormalNC guibg=none ctermbg=none
+                highlight SignColumn guibg=none ctermbg=none
+                highlight EndOfBuffer guibg=none ctermbg=none
+                highlight NvimTreeNormal guibg=none ctermbg=none
+                highlight NvimTreeNormalNC guibg=none ctermbg=none
+                highlight NvimTreeEndOfBuffer guibg=none ctermbg=none
+            ]])
+        end,
+    },
 }

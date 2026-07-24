@@ -48,7 +48,7 @@ exec --no-startup-id flatpak run com.spotify.Client
 exec --no-startup-id nm-applet &
 
 exec --no-startup-id sh -c "sleep 1 && xrandr --output eDP-1 --mode 1920x1080"
-exec --no-startup-id sh -c "sleep 1 && feh --bg-scale ~/Downloads/anime-girl.jpg"
+exec --no-startup-id sh -c "sleep 1 && feh --bg-scale ~/Downloads/mountain.jpg"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

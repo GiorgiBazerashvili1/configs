@@ -1,21 +1,19 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  lazy = false,
-  config = function()
-    -- These are the lines to uncomment!
-    local status, configs = pcall(require, "nvim-treesitter.configs")
-    if not status then return end
-
-    configs.setup({
-      ensure_installed = { "javascript", "html", "css", "lua", "vim", "vimdoc" },
-      auto_install = true,
-      highlight = {
-        enable = true,
-      },
-      indent = {
-        enable = true,
-      },
-    })
-  end,
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    lazy = false,
+    config = function()
+        -- 🔥 FIX: Call the main setup directly to avoid deprecated module crashes
+        require("nvim-treesitter").setup({
+            ensure_installed = { "javascript", "c", "html", "css", "lua", "vim", "vimdoc", "python" },
+            auto_install = true,
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false, -- Disables old VIM regex for pure treesitter speed
+            },
+            indent = {
+                enable = true,
+            },
+        })
+    end,
 }
