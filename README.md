@@ -38,3 +38,10 @@ npm install -g tree-sitter-cli
 sudo zypper install i3 picom kitty polybar flameshot neovim git curl gcc gcc-c++ make nodejs npm
 npm install -g tree-sitter-cli
 ```
+
+## SSH Setup
+
+After setting up the SSH private key, make sure its permissions are restricted:
+
+```bash
+chmod 600 ~/.ssh/id_ed25519
