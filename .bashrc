@@ -72,7 +72,14 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
+nautilus_alt() {
+    xhost +SI:localuser:giorgi-alt >/dev/null
+    su - giorgi-alt -c 'export DISPLAY=:0; nautilus /home/giorgi-alt'
+    xhost -SI:localuser:giorgi-alt >/dev/null
+}
+
+alias nautilus-alt='nautilus_alt'
+
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='eza --icons'
